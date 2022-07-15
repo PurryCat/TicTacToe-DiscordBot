@@ -62,6 +62,8 @@ async def on_message(ctx):
 # ------------------------------------------------------- User Info -------------------------------------------------------
     if contentWords[0].lower() == "fui" or contentWords[0].lower() == "fuserinfo":
         authorRow = idcheckttt(ctx.author.id)
+        workbook = load_workbook(filename="tictactoe/tictactoe.xlsx")
+        sheet = workbook.active
         tictactoeswon = str(sheet.cell(row=authorRow, column=4).value)
         tictactoeslost = str(sheet.cell(row=authorRow, column=5).value)
         tictactoestied = str(sheet.cell(row=authorRow, column=6).value)
